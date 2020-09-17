@@ -36,6 +36,7 @@
     "webpack-merge": "^5.1.4"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.11.5"
+    "@babel/polyfill": "^7.11.5",
+    "svg-sprite-loader": "^5.0.0"
   }
 }
