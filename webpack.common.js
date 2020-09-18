@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const path = require("path");
 
 module.exports = {
     entry : "./src/assets/srcipts/app.js",
@@ -32,14 +33,25 @@ module.exports = {
             {
                 test : /\.svg/i,
                 include: /.*sprite\.svg/,
+                exclude: {
+                    or: [
+                        path.resolve(__dirname, './src/assets/public/fonts')
+                    ]
+                },
                 use: [
                     {
                         loader: 'svg-sprite-loader',
-                        options: {
+                        options: { 
                             publicPath: '',
                         }
                     },
                 ],
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|svg)$/,
+                include: [path.resolve(__dirname, './src/assets/public/fonts')],
+                exclude: /.*sprite\.svg/,
+                loader: 'url-loader?limit=100000',
             }
         ]
     },

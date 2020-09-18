@@ -222,7 +222,7 @@
 
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--color-grey-light-2);
+    border-bottom: var(--line);
 
     &__heading {
         font-size: 2.25rem;
@@ -319,5 +319,97 @@
     100% {
         transform: scale(1);
         box-shadow: none;
+    }
+}
+
+
+// /////////////////////////////////////////////////
+// detail
+
+.detail{
+    display : flex;
+    padding: 4.5rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--line);
+}
+
+// /////////////////////////////////////////////////
+// description
+
+.description {
+    font-size: 1.4rem;
+    background-color: #fff;
+    flex: 0 0 60%;
+    margin-right: 4.5rem;
+    box-shadow: var(--box-shadow-light);
+    padding: 3rem;
+}
+
+// /////////////////////////////////////////////////
+// user-reviews
+
+.user-reviews {
+    background-color: yellowgreen;
+    flex: 1;
+}
+
+// /////////////////////////////////////////////////
+// paragraph
+.paragraph {
+    &:not(:last-of-type) {
+        margin-bottom: 2rem;
+    }
+}
+
+// /////////////////////////////////////////////////
+// list
+.list {
+    margin: 3rem 0;
+    list-style: none;
+    padding: 3rem 0;
+    border-top : var(--line);
+    border-bottom : var(--line);
+
+    display: flex;
+    flex-wrap: wrap;   
+    
+    &__item {
+        flex : 0 0 50%;
+        margin-bottom: .7rem;
+
+        & > span {
+            color: var(--color-primary);
+        }
+    }
+}
+
+
+
+
+// /////////////////////////////////////////////////
+// recommend
+
+.recommend{
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+    display: flex;
+    align-items: center;
+
+    &__count {
+        margin-right: auto;
+    } 
+
+
+
+    &__photo{
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-sizing: content-box;
+        &:not(:last-of-type){
+            margin-right: -1.5rem;
+        }
+
     }
 }
